@@ -9,6 +9,7 @@ import Image from "next/image";
 import { recipeDetails } from "../config/frontendConfig";
 
 import { Inter } from "next/font/google";
+import { Button } from "@/components/ui/button";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -74,18 +75,18 @@ function ProtectedPage() {
                 <div className={styles.innerContent}>
                     <div>Your userID is:</div>
                     <div className={`${styles.truncate} ${styles.userId}`}>{session.userId}</div>
-                    <div onClick={fetchUserData} className={styles.sessionButton}>
+                    <Button onClick={fetchUserData} >
                         Call API
-                    </div>
+                    </Button>
                 </div>
             </div>
             <div className={styles.bottomLinksContainer}>
                 {links.map((link) => (
                     <div className={styles.linksContainerLink} key={link.name}>
                         <Image className={styles.linkIcon} src={link.icon} alt={link.name} />
-                        <div role={"button"} onClick={link.onClick}>
+                        <Button onClick={link.onClick} variant='link'>
                             {link.name}
-                        </div>
+                        </Button>
                     </div>
                 ))}
             </div>

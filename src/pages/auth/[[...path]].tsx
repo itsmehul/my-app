@@ -36,7 +36,7 @@ export default function Auth(): JSX.Element {
             </Head>
 
             <main className={styles.main}>
-                <Button color='dark' variant='destructive'>Button</Button>
+                <Button color='dark' >Button</Button>
                 <Input type="email" placeholder="Email" />
                 <SuperTokensComponentNoSSR />
             </main>
