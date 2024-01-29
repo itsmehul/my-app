@@ -6,6 +6,8 @@ import SuperTokens from "supertokens-auth-react";
 import { canHandleRoute, getRoutingComponent } from "supertokens-auth-react/ui";
 import { PreBuiltUIList } from "../../config/frontendConfig";
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+
 
 
 const SuperTokensComponentNoSSR = dynamic<{}>(new Promise((res) => res(() => getRoutingComponent(PreBuiltUIList))), {
@@ -34,7 +36,8 @@ export default function Auth(): JSX.Element {
             </Head>
 
             <main className={styles.main}>
-                <Button color='dark' variant='ghost'>Button</Button>
+                <Button color='dark' variant='destructive'>Button</Button>
+                <Input type="email" placeholder="Email" />
                 <SuperTokensComponentNoSSR />
             </main>
         </div>

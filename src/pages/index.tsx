@@ -8,6 +8,11 @@ import { BlogsIcon, CelebrateIcon, GuideIcon, SeparatorLine, SignOutIcon } from 
 import Image from "next/image";
 import { recipeDetails } from "../config/frontendConfig";
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+
+
 interface ILink {
     name: string;
     onClick: () => void;
@@ -57,7 +62,7 @@ function ProtectedPage() {
     ];
 
     return (
-        <div className={styles.homeContainer}>
+        <div className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
             <Head>
                 <title>SuperTokens 💫</title>
                 <link rel="icon" href="/favicon.ico" />
